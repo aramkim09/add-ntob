@@ -19,11 +19,15 @@ uint32_t a[2],b[2];
 fread(a,4,1,fp1);
 fread(b,4,1,fp2);
 
-printf("%u",sum(ntohl(a[0]),ntohl(b[0])));
+uint32_t an=ntohl(a[0]);
+uint32_t bn=ntohl(b[0]);
+
+printf("%u(%x) + %u(%x) = %u\n",an,an,bn,bn,sum(an,bn));
 
 
 
 fclose(fp1);
 fclose(fp2);
 
+return 0;
 }
